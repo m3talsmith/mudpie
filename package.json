@@ -1,5 +1,7 @@
 {
   "name": "mudpie",
   "version": "0.0.1",
-  "dependencies": {}
+  "dependencies": {
+    "optimist": "0.3.1"
+  }
 }

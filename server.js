@@ -1,3 +1,6 @@
+var argv = require('optimist').argv;
+var port = argv.port ? argv.port : 23;
+
 var sockets           = [];
 var find_socket_index = function(socket_id) {
   socket_index = null;
@@ -26,9 +29,9 @@ net.createServer(function(socket){
     console.log(socket_id + ' disconnected');
   });
 
-  socket.write('Connected to MudPie');
+  socket.write('Connected to MudPie\r\n');
   socket.pipe(socket);
 
-}).listen('23', function(){
-  console.log('Server started');
+}).listen(port, function(){
+  console.log('Let the contest begin! - MudPie ready for connections');
 });
