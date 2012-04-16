@@ -48,4 +48,13 @@ Or if you customized the port (again port 300 as an example):
 telnet localhost 3000
 ```
 
+Testing
+-------
+
+```bash
+npm test
+```
+
+All the tests are stored in the test directory. Current plans are to have the helper run all the test in the directories inside the test directory. I suggest you require test/_helper.js in all the tests in the meantime.
+
 Enjoy!

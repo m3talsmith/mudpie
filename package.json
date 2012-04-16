@@ -10,5 +10,8 @@
     "mocha": "~1.0.1",
     "request": "~2.9.202",
     "assert": "~0.4.9"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha test/_helper.js"
   }
 }
