@@ -13,13 +13,22 @@ var find_socket_index = function(socket_id) {
 var net = require('net');
 
 net.createServer(function(socket){
-  var socket_id = (new Date).getTime();
-  sockets.push({id: socket_id, socket: socket});
+  var socket_id     = (new Date).getTime();
+  var socket_object = {id: socket_id, socket: socket, info: {address: socket.remoteAddress, port: socket.remotePort}};
+  
+  console.log(socket_id + ' connected from ' + socket.remoteAddress + ':' + socket.remotePort);
+
+  sockets.push(socket_object);
 
   socket.on('end', function(){
     socket_index = find_socket_index(socket_id);
     sockets.splice(socket_index, (socket_index + 1));
+    console.log(socket_id + ' disconnected');
   });
-}).listen('3000', function(){
+
+  socket.write('Connected to MudPie');
+  socket.pipe(socket);
+
+}).listen('23', function(){
   console.log('Server started');
 });
