@@ -1,5 +1,5 @@
 var argv = require('optimist').argv;
-var port = argv.port ? argv.port : 23;
+var port = argv.port ? argv.port : 8080;
 
 var sockets           = [];
 var find_socket_index = function(socket_id) {

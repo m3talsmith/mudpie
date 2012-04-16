@@ -1,1 +1,1 @@
-web: node server.js --port 80
+web: node server.js
