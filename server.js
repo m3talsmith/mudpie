@@ -33,5 +33,5 @@ net.createServer(function(socket){
   socket.pipe(socket);
 
 }).listen(port, function(){
-  console.log('Let the contest begin! - MudPie ready for connections');
+  console.log('Let the contest begin! - MudPie ready for connections on port ' + port);
 });
